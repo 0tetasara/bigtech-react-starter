@@ -1,0 +1,653 @@
+/* Custom enhancements for WordPress-style components */
+
+/* Partner section hover effects - WordPress matching */
+.partner-item {
+  transition: all 0.3s ease;
+}
+
+.partner-logo {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover .partner-logo {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1.2) blur(0.5px);
+  transform: scale(1.05);
+}
+
+/* Choose section auto-rotating progress bar */
+.slide-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--tg-primary-color), var(--tg-secondary-color));
+  border-radius: 2px;
+  transition: width 0.1s linear;
+  width: var(--progress-width, 0%);
+}
+
+.slide-progress[style*="background-size"]::before {
+  width: attr(aria-valuenow %);
+}
+
+/* Choose section navigation dots */
+.choose-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slide-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--tg-primary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-dot.active,
+.slide-dot:hover {
+  background: var(--tg-primary-color);
+}
+
+/* Choose section items styling */
+.choose-item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.choose-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 196, 244, 0.2);
+}
+
+.choose-icon {
+  margin-bottom: 20px;
+}
+
+.choose-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Document section styling */
+.document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.document-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.document-list li i {
+  color: var(--tg-primary-color);
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+/* Team section background overlay */
+.team-area.team-bg {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.team-area.team-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 11, 21, 0.8);
+  z-index: 1;
+}
+
+.team-area .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fix team social overlapping */
+.team-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.team-content {
+  padding-top: 20px;
+  position: relative;
+}
+
+.team-social {
+  margin-top: 15px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ICO countdown styling enhancements - WordPress exact matching */
+.banner-countdown-wrap .title {
+  color: #ffffff;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: #1a2332;
+  border: 2px solid #00c4f4;
+  border-radius: 8px;
+  padding: 20px 15px;
+  margin: 0;
+  min-width: 100px;
+  max-width: 120px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 196, 244, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 196, 244, 0.1) 0%, rgba(86, 77, 202, 0.1) 100%);
+  pointer-events: none;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #00c4f4;
+  line-height: 1;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-text {
+  display: block;
+  font-size: 11px;
+  color: #a4b4c3;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* Chart section enhancements */
+.chart-area {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.chart-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 11, 21, 0.9);
+  z-index: 1;
+}
+
+.chart-area .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fix chart overlapping li elements - Complete override */
+.chart-wrap {
+  position: relative !important;
+  z-index: 3 !important;
+  background: #0B1D33 !important;
+  border-radius: 20px !important;
+  padding: 60px 45px !important;
+  text-align: center !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 400px !important;
+}
+
+.chart-wrap img {
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  background: transparent !important;
+  filter: none !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0 auto 30px auto !important;
+  display: block !important;
+}
+
+.chart-wrap ul {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  z-index: 2 !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.chart-wrap ul li {
+  position: relative !important;
+  width: 50% !important;
+  text-align: left !important;
+  font-size: 14px !important;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  padding-left: 30px !important;
+  margin-bottom: 8px !important;
+  border-radius: 0 !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+.chart-wrap ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #005F73;
+}
+
+.chart-wrap ul li:nth-child(2)::before {
+  background: #F72585;
+}
+
+.chart-wrap ul li:nth-child(3)::before {
+  background: #5DD400;
+}
+
+.chart-wrap ul li:nth-child(4)::before {
+  background: #FF9700;
+}
+
+.chart-wrap ul li:nth-child(5)::before {
+  background: var(--tg-primary-color);
+}
+
+.chart-wrap ul li:nth-child(6)::before {
+  background: #007FF4;
+}
+
+/* Footer Enhancements - WordPress Style */
+.footer-area-three {
+  background: #030B15 !important;
+  position: relative;
+}
+
+.footer-area-three::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 196, 244, 0.05) 0%, rgba(255, 149, 0, 0.05) 100%);
+  z-index: 1;
+}
+
+.footer-top-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0 60px !important;
+}
+
+.footer-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.footer-widget {
+  margin-bottom: 40px;
+}
+
+.footer-widget .fw-title h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer-widget .fw-title h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--tg-primary-color);
+}
+
+.footer-content p {
+  color: #A4B4C3;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.footer-social ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social ul li {
+  margin-right: 15px;
+}
+
+.footer-social ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-social ul li a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+  background: var(--tg-primary-color);
+  transform: translateY(-3px);
+}
+
+.footer-link ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link ul li {
+  margin-bottom: 12px;
+}
+
+.footer-link ul li a {
+  color: #A4B4C3;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 15px;
+}
+
+.footer-link ul li a::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--tg-primary-color);
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-link ul li a:hover {
+  color: #ffffff;
+  padding-left: 20px;
+}
+
+.footer-link ul li a:hover::before {
+  opacity: 1;
+}
+
+.footer-newsletter p {
+  color: #A4B4C3;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 196, 244, 0.3);
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 0;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--tg-primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 196, 244, 0.2);
+}
+
+.newsletter-form input::placeholder {
+  color: #A4B4C3;
+  font-weight: 400;
+}
+
+.newsletter-form button {
+  background: linear-gradient(135deg, var(--tg-primary-color) 0%, #007FF4 100%);
+  border: none;
+  color: #ffffff;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #007FF4 0%, var(--tg-primary-color) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 196, 244, 0.4);
+}
+
+.newsletter-form button i {
+  font-size: 16px;
+}
+
+.footer-newsletter-text p {
+  color: #A4B4C3;
+  font-size: 13px;
+  margin: 0;
+}
+
+.footer-newsletter-text i {
+  color: var(--tg-primary-color);
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.copyright-text p {
+  color: #A4B4C3;
+  font-size: 14px;
+  margin: 0;
+}
+
+.copyright-text a {
+  color: var(--tg-primary-color);
+  text-decoration: none;
+}
+
+.footer-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu ul li {
+  margin-left: 30px;
+}
+
+.footer-menu ul li a {
+  color: #A4B4C3;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-menu ul li a:hover {
+  color: var(--tg-primary-color);
+}
+
+/* Who we are section styling -- التعديل هنا */
+/* This rule targets the image container inside the section with id="about" */
+#about .about-img {
+  position: relative; /* Needed to position the second image absolutely inside this container */
+  background: transparent !important; /* نضمن أن الحاوية شفافة */
+  border: none !important; /* نزيل أي حدود */
+  box-shadow: none !important; /* نزيل أي ظل */
+  /* Add some padding to make space for the bubble image */
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+/* This rule targets all images, ensuring they are transparent with no extra styling */
+#about .about-img img {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  outline: none !important;
+  position: relative;
+  z-index: 1;
+  filter: none !important; /* Remove any color filters */
+}
+
+/* Remove any pseudo-elements that might add colors */
+#about .about-img img::before,
+#about .about-img img::after {
+  display: none !important;
+}
+
+/* Add positioning for the second image to make it visible */
+#about .about-img .img-two {
+    position: absolute;
+    top: -50px; /* Move it up */
+    left: -50px; /* Move it to the left */
+    max-width: 40%; /* Make it smaller */
+    z-index: -1; /* Place it behind the main image */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .choose-nav {
+    margin-top: 20px;
+  }
+  
+  .slide-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .countdown-item {
+    margin: 0 5px;
+    padding: 15px;
+  }
+  
+  .countdown-number {
+    font-size: 28px;
+  }
+  
+  #about .about-img {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  #about .about-img .img-two {
+    top: -20px;
+    left: -20px;
+  }
+}
+
