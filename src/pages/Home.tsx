@@ -1,12 +1,10 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection';
-import ParticleBackground from '../components/ParticleBackground';
+import BannerSection from '../components/BannerSection';
 
 const Home: React.FC = () => {
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      <ParticleBackground />
-      <HeroSection />
+    <main className="min-h-screen">
+      <BannerSection />
     </main>
   );
 };

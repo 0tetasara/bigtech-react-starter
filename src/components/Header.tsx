@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   showHeaderRight?: boolean;
@@ -55,26 +56,26 @@ const Header: React.FC<HeaderProps> = ({
                 <div className="menu-wrap">
                   <nav className="menu-nav">
                     <div className="logo">
-                      <a href="/">
-                        <img src="src/assets/img/logo/logo.png" alt="Bigtech" />
-                      </a>
+                      <Link to="/">
+                        <img src="/logo/logo.png" alt="Bigtech" />
+                      </Link>
                     </div>
                     <div className="navbar-wrap main-menu d-none d-lg-flex">
                       <ul className="navigation">
                         <li className="menu-item-has-children">
-                          <a href="/">Home</a>
+                          <Link to="/">Home</Link>
                         </li>
-                        <li><a href="/about">About</a></li>
+                        <li><Link to="/about">About</Link></li>
                         <li className="menu-item-has-children">
-                          <a href="/services">Services</a>
+                          <Link to="/services">Services</Link>
                         </li>
                         <li className="menu-item-has-children">
                           <a href="/pages">Pages</a>
                         </li>
                         <li className="menu-item-has-children">
-                          <a href="/blog">Blog</a>
+                          <Link to="/blog">Blog</Link>
                         </li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><Link to="/contact">Contact</Link></li>
                       </ul>
                     </div>
 
@@ -112,18 +113,18 @@ const Header: React.FC<HeaderProps> = ({
                       <i className="fas fa-times"></i>
                     </div>
                     <div className="nav-logo">
-                      <a href="/">
-                        <img src="src/assets/img/logo/logo.png" alt="Bigtech" />
-                      </a>
+                      <Link to="/">
+                        <img src="/logo/logo.png" alt="Bigtech" />
+                      </Link>
                     </div>
                     <div className="menu-outer">
                       <ul className="navigation">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/services">Services</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/services">Services</Link></li>
                         <li><a href="/pages">Pages</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                       </ul>
                     </div>
 

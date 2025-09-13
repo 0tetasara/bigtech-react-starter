@@ -1,22 +1,4 @@
-/* Import all WordPress CSS files in the correct order */
-@import url('./assets/css/bootstrap.min.css');
-@import url('./assets/css/animate.min.css');
-@import url('./assets/css/fontawesome-all.min.css');
-@import url('./assets/css/mCustomScrollbar.min.css');
-@import url('./assets/css/odometer.css');
-@import url('./assets/css/slick.css');
-@import url('./assets/css/default.css');
-@import url('./assets/css/bigtech-core.css');
-@import url('./assets/css/bigtech-unit.css');
-@import url('./assets/css/bigtech-custom.css');
-@import url('./assets/css/responsive.css');
-@import url('./assets/css/countdown.css');
-@import url('./assets/css/wordpress-animations.css');
-@import url('./assets/css/custom-enhancements.css');
-
-/* React Slick CSS is already included in the WordPress slick.css */
-
-/* Global styles */
+/* Basic CSS reset and layout */
 * {
   margin: 0;
   padding: 0;
@@ -24,20 +6,175 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
+  background: #0a0a0a;
+  color: #ffffff;
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* Ensure proper font loading */
-.outfit-font {
-  font-family: 'Outfit', sans-serif;
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.poppins-font {
-  font-family: 'Poppins', sans-serif;
+.menu-area {
+  padding: 1rem 0;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #00d4aa;
+}
+
+/* Banner/Hero Styles */
+.banner-area {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.banner-content h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #00d4aa, #0077be);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banner-progress-wrap {
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-progress-wrap ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.progress {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4aa, #0077be);
+  transition: width 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.custom-container-three {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Utility classes */
+.d-none {
+  display: none;
+}
+
+.d-lg-flex {
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  .d-lg-flex {
+    display: flex;
+  }
+  
+  .d-none {
+    display: block;
+  }
+}
+
+/* Mobile menu styles */
+.mobile-nav-toggler {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .mobile-nav-toggler {
+    display: none;
+  }
+}
+
+.menu-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-wrap {
+  margin-left: auto;
+  margin-right: 2rem;
 }
